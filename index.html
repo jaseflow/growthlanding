@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+	<title>Growth Learning - The smarter way to deliver your training</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <header class="section hero">
+            <div class="hero__bg">
+                <span></span>
+            </div>
+            <div class="container hero__container">
+                <header class="header">
+                    <img src="images/logo-full-green-white@2x.png" alt="Growth Learning" class="logo">
+                </header>
+                <div class="hero__content">
+                    <h1>The smarter way to deliver your training</h1>
+                    <p class="flat">Growth Learning creates a learning environment which strengthens the partnership between trainers, students and mentors. Our app gives unmatched insights to any party invested in someones education.</p>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="triangle triangle--school" id="triangle">
+                <div>
+                    <div class="triangle__message">Investment</div>
+                    <div class="triangle__message">Investment</div>
+                    <div class="triangle__message">Investment</div>
+                </div>
+                <div>
+                    <div class="triangle__arrows"></div>
+                    <div class="triangle__arrows"></div>
+                    <div class="triangle__arrows"></div>
+                </div>
+                <div>
+                    <div class="triangle__point">
+                        <div class="triangle__avatar">
+                            <img src="images/student.png" class="school" alt="">
+                            <img src="images/employee.png" class="occupational" alt="">
+                        </div>
+                        <span class="triangle__label school">Student</span>
+                        <span class="triangle__label occupational">Employee</span>
+                    </div>
+                    <div class="triangle__point">
+                        <div class="triangle__avatar">
+                            <img src="images/teacher.png" class="school" alt="">
+                            <img src="images/trainer.png" class="occupational" alt="">
+                        </div>
+                        <span class="triangle__label school">Teacher</span>
+                        <span class="triangle__label occupational">Trainer</span>
+                    </div>
+                    <div class="triangle__point">
+                        <div class="triangle__avatar">
+                            <img src="images/parent.png" class="school" alt="">
+                            <img src="images/employer.png" class="occupational" alt="">
+                        </div>
+                        <span class="triangle__label school" class="">Parent</span>
+                        <span class="triangle__label occupational">Employer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="toggle">
+                    <div class="toggle__option toggle__option--on" data-toggle="school">School/Uni</div>
+                    <div class="toggle__option" data-toggle="occupational">Occupational</div>
+                </div>
+                <h2>Learning is a team effort</h2>
+                <p>We understand that learning involves more than just a teacher and a student. Our app creates an engaging environment for all parties taking part in someones educational journey.</p>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("ready");
+            var toggleOptions = document.querySelectorAll(".toggle__option")
+                triangle = document.querySelector("#triangle");
+            toggleOptions.forEach(function(option) {
+                option.addEventListener("click", function(e) {
+                    document.querySelector(".toggle__option--on").classList.remove("toggle__option--on");
+                    e.target.classList.add("toggle__option--on");
+                    if(e.target.dataset.toggle === "school") {
+                        triangle.classList.remove("triangle--occupational");
+                        triangle.classList.add("triangle--school");
+                    }
+                    if(e.target.dataset.toggle === "occupational") {
+                        triangle.classList.remove("triangle--school");
+                        triangle.classList.add("triangle--occupational");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
