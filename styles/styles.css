@@ -18,14 +18,19 @@ body {
 
 h1 {
 	line-height: 1.2;
-    font-size: 1.75em;
+    font-size: 1.9375em;
 }
 
 h2 {
-    font-size: 1.25em;	
+    font-size: 1.5em;	
+    line-height: 1.2;
 }
 
 h3 {
+	font-size: 1.25em;
+}
+
+h4 {
 	font-size: 1.125em;
 }
 
@@ -41,6 +46,10 @@ ol {
 
 img {
 	max-width: 100%;
+}
+
+.text-centered {
+	text-align: center;
 }
 
 /**
@@ -104,8 +113,9 @@ img {
     color: #97afbb;
 }
 
-.section--darker {
-	background: #1b3a50;
+.section--company {
+	background: #f9f9f9;
+    padding-bottom: 0 !important;
 }
 
 .section--dark h1,
@@ -211,7 +221,7 @@ img {
     top: calc(100% + 12px);
     opacity: 1;
     padding: 24px;
-    width: 240px;
+    width: 300px;
     z-index: 500;
     right: 0;
 }
@@ -569,21 +579,45 @@ img {
     margin-bottom: 48px;
 }
 
-.wizard-screen {
-	display: none;
+.footer {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+	background: #1b3a50;
+    padding: 48px 0;
+    color: #fff;
+}
+
+.signup-form {
+	max-width: 500px;
+}
+
+.signup-form label {
+	margin-bottom: 6px;
+    display: block;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.signup-legal {
+	font-size: 12px;
+    margin-top: 24px;
+}
+
+#success_message {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+#success_message:after {
+	display: block;
+    content: "We'll be in touch shortly.";
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
 }
 
 @media(min-width: 1000px) {
-
-    .popup {
-        left: 50%;
-        margin-left: -120px;
-    }
-    
-    .popup:before {
-        left: 50%;
-        margin-left: -5px;
-    }
 
     .grid {
         display: flex;
@@ -598,6 +632,10 @@ img {
 
     h1 {
         font-size: 2.625em;
+    }
+
+    h2 {
+        font-size: 2em;
     }
 
     .hero {
@@ -680,19 +718,21 @@ img {
         flex-direction: column;
     }
 
-    .section--dark {
-        padding: 96px 0;
+    .section--spaced {
+        padding: 48px 0;
+    }
+}
+
+@media(min-width: 1200px) {
+
+    .popup {
+        left: 50%;
+        margin-left: -150px;
+    }
+    
+    .popup:before {
+        left: 50%;
+        margin-left: -5px;
     }
 
-    .section--company {
-        padding-bottom: 500px !important;
-        overflow: hidden;
-    }
-
-    .section--company .section__figure {
-        position: absolute;
-        left: 0;
-    }
-
-    .wizard-screen { display: block; }
 }
