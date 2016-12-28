@@ -16,7 +16,14 @@
             <div class="container hero__container">
                 <header class="header">
                     <img src="images/logo-full-green-white@2x.png" alt="Growth Learning" class="logo">
-                    <a href="#" class="header__btn">Login</a>
+                    <a href="#" class="header__btn" id="login">
+                        Login
+                        <div class="popup" hidden id="login-box">
+                            <input class="input form__input" type="text" placeholder="Email address">
+                            <input class="input form__input" type="password" placeholder="Password">
+                            <button class="btn btn--block">Login</button>
+                        </div>
+                    </a>
                 </header>
                 <div class="hero__content">
                     <h1>The smarter way to deliver your training</h1>
@@ -167,7 +174,9 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var toggleOptions = document.querySelectorAll(".toggle__option")
-                triangle = document.querySelector("#triangle");
+                triangle = document.querySelector("#triangle"),
+                loginLink = document.querySelector("#login"),
+                loginBox = document.querySelector("#login-box");
             toggleOptions.forEach(function(option) {
                 option.addEventListener("click", function(e) {
                     document.querySelector(".toggle__option--on").classList.remove("toggle__option--on");
@@ -181,6 +190,14 @@
                         triangle.classList.add("triangle--occupational");
                     }
                 });
+            });
+            loginLink.addEventListener("click", function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                loginBox.hidden = false;
+            });
+            document.querySelector("body").addEventListener("click", function(e) {
+                loginBox.hidden = true;
             });
         });
     </script>
